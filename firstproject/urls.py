@@ -16,11 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import blog.views
+import info.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
     path('blog/home', blog.views.home,name='home'),
     path('blog/post/<int:post_id>/',blog.views.detail,name='detail'),
     path('blog/post/new/',blog.views.post_new, name='new'),
+    path('info',info.views.home,name='info'),
+    path('info/detail',info.views.detail,name='detail'),
     #127.0.0.1:8000/blog/post/new
 ]
